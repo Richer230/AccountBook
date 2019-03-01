@@ -2,11 +2,11 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:id="@+id/text"
-    android:background="#858282"
+    android:background="#C6897BE9"
     android:textSize="20sp"
     android:textStyle="bold"
     android:textColor="#080808"
     android:gravity="center"
-    android:text="">
+    android:text="2019-03-01">
 
 </TextView>

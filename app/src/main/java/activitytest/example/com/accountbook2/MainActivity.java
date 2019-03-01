@@ -115,8 +115,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 });
                 money.setText("50.00");
                 builder.setView(viewDialog);
-                builder.setTitle("New Cost");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                builder.setTitle("记一笔");
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     }
                 });
 
-                builder.setNegativeButton("Cancel",null);
+                builder.setNegativeButton("取消",null);
                 builder.create().show();
             }
 
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void showMyDialog(int index){
-        final String[] options = {"Delete","Edit","Delete All"};
+        final String[] options = {"删除","编辑","清空"};
 
         final CostBean selectedCostBean = mCostBeanList.get(index);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -251,8 +251,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     editTime.setMinute(myDate.getMinute(selectedCostBean.getCostTime()));
 
                     builder.setView(viewDialog);
-                    builder.setTitle("Edit Cost");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    builder.setTitle("编辑账单");
+                    builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
 
@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             reload();
                         }
                     });
-                    builder.setNegativeButton("Cancel",null);
+                    builder.setNegativeButton("取消",null);
                     builder.create().show();
 
                 }else if(which==2){
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
             }
         });
-        builder.setNegativeButton("Cancel",null);
+        builder.setNegativeButton("取消",null);
         builder.create().show();
     }
 

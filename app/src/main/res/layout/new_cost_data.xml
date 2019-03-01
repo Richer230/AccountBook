@@ -33,15 +33,16 @@
             android:id="@+id/String_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40dp"
+            android:textSize="20dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
-            android:text="Title : "/>
+            android:layout_marginTop="10dp"
+            android:text="分类 : "/>
 
         <Spinner
             android:id="@+id/sp_cost_title"
             android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:layout_height="42dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="4dp"
             android:layout_marginLeft="15dp"
@@ -57,8 +58,9 @@
         <TextView
             android:id="@+id/String_money"
             android:layout_marginLeft="10dp"
-            android:text="Money : "
-            android:textSize="40dp"
+            android:text="金额 : "
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
@@ -66,8 +68,8 @@
             android:id="@+id/et_cost_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:hint="Cost  Money" />
+            android:layout_margin="2dp"
+            android:hint="请输入消费金额" />
         <TextView
             android:text="￥"
             android:textSize="30dp"
