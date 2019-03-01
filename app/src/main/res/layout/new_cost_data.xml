@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="收入"/>
+        <RadioButton
+            android:id="@+id/rb_expend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="支出"/>
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/String_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:text="Title : "/>
+
+        <Spinner
+            android:id="@+id/sp_cost_title"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toRightOf="@+id/String_type"
+            android:gravity="center"
+            android:spinnerMode="dialog" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/String_money"
+            android:layout_marginLeft="10dp"
+            android:text="Money : "
+            android:textSize="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_toRightOf="@+id/String_money"
+            android:id="@+id/et_cost_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="Cost  Money" />
+        <TextView
+            android:text="￥"
+            android:textSize="30dp"
+            android:layout_toRightOf="@+id/et_cost_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <DatePicker
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_margin="4dp"
+        android:id="@+id/dp_cost_date"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"/>
+    <TimePicker
+        android:timePickerMode="spinner"
+        android:id="@+id/tp_cost_time"
+        android:layout_width="300dp"
+        android:layout_height="100dp">
+    </TimePicker>
+
+</LinearLayout>

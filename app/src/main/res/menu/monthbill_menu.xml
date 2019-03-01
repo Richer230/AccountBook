@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="activitytest.example.com.accountbook2.MonthBill">
+    <item
+        android:id="@+id/year"
+        android:orderInCategory="100"
+        android:title="年账单"
+        app:showAsAction="never" />
+</menu>
