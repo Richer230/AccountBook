@@ -79,13 +79,14 @@ public class YearBill extends AppCompatActivity {
                 //Log.d("month: ", mList.get(i));
                 if(cursor.getString(cursor.getColumnIndex("cost_month")).equals(mList.get(i).getCostMonth())){
                     mListMoney.set(i,mListMoney.get(i) + Double.parseDouble(cursor.getString(cursor.getColumnIndex("cost_money"))));
+                    if(cursor.getInt(cursor.getColumnIndex("cost_type"))==1){
+                        expandList.set(i,expandList.get(i)+Double.parseDouble(cursor.getString(cursor.getColumnIndex("cost_money"))));
+                    }else{
+                        incomeList.set(i,incomeList.get(i)+Double.parseDouble(cursor.getString(cursor.getColumnIndex("cost_money"))));
+                    }
                 }
             }while(cursor.moveToNext());
-            if(mListMoney.get(i)<0){
-                expandList.set(i,mListMoney.get(i));
-            }else{
-                incomeList.set(i,mListMoney.get(i));
-            }
+
         }
         return mListMoney;
     }
