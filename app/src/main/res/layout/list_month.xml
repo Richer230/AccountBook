@@ -9,44 +9,52 @@
     android:paddingBottom="10dp">
 
     <RelativeLayout
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="60dp">
 
         <TextView
+            android:textColor="#010101"
             android:id="@+id/month_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
             android:gravity="center"
             android:text="2019-03-01"
-            android:textSize="30dp" />
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/month_money_simple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/month_money"
+            android:layout_marginTop="15dp"
             android:gravity="center"
+            android:textColor="#030303"
             android:text="￥"
-            android:textSize="40dp" />
+            android:textSize="25dp" />
 
         <LinearLayout
+            android:layout_marginTop="5dp"
             android:orientation="vertical"
             android:id="@+id/month_money"
             android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:textColor="#000000"
                     android:text="收入： "
                     android:textSize="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/month_income_money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,11 +65,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:textColor="#000000"
                     android:text="支出： "
                     android:textSize="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/month_expand_money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

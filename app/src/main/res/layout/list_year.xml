@@ -12,39 +12,46 @@
     <RelativeLayout
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="60dp">
         <TextView
             android:id="@+id/year_date"
             android:text="2019-03"
-            android:textSize="35dp"
+            android:textSize="25dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#050505"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
+            android:textColor="#000000"
             android:id="@+id/year_money_simple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/year_money"
             android:text="￥"
-            android:textSize="45dp" />
+            android:layout_marginTop="15dp"
+            android:textSize="25dp" />
         <LinearLayout
+            android:layout_marginRight="10dp"
             android:orientation="vertical"
             android:id="@+id/year_money"
             android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:textColor="#000000"
                     android:text="收入： "
                     android:textSize="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/year_income_money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -56,11 +63,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:textColor="#000000"
                     android:text="支出： "
                     android:textSize="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:textColor="#000000"
                     android:textSize="20dp"
                     android:text="3000.00"
                     android:id="@+id/year_expand_money"

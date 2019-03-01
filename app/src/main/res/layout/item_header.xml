@@ -2,11 +2,14 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:id="@+id/text"
-    android:background="#C6897BE9"
-    android:textSize="20sp"
-    android:textStyle="bold"
-    android:textColor="#080808"
-    android:gravity="center"
+    android:textSize="21sp"
+    android:background="#E3E0E0"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:textColor="#685B5B"
+    android:textStyle="italic"
     android:text="2019-03-01">
 
 </TextView>
