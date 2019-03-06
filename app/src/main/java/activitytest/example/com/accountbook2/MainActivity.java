@@ -40,8 +40,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ArrayAdapter<String> arrayAdapter;
     private List<String> typesList;
     private String editTitle;
-    private TextView newCostTile;
-    private Button titleButton;
     private Spinner titleSpinner;
     private MyDate myDate;
     private StickyListHeadersListView stickyList;
@@ -50,11 +48,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("首页");
-        stickyList =  (StickyListHeadersListView) findViewById(R.id.test);
+        stickyList =  findViewById(R.id.test);
         typesList = new ArrayList<>();
         mDatabaseHelper = new DatabaseHelper(this);
         mCostBeanList = new ArrayList<>();
@@ -64,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         initView();
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,10 +70,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
                 final View viewDialog = inflater.inflate(R.layout.new_cost_data,null);
-                final RadioGroup typeGroup = (RadioGroup) viewDialog.findViewById(R.id.radio_group);
-                final EditText money = (EditText) viewDialog.findViewById(R.id.et_cost_money);
-                final DatePicker date = (DatePicker) viewDialog.findViewById(R.id.dp_cost_date);
-                final TimePicker time = (TimePicker) viewDialog.findViewById(R.id.tp_cost_time);
+                final RadioGroup typeGroup =  viewDialog.findViewById(R.id.radio_group);
+                final EditText money =  viewDialog.findViewById(R.id.et_cost_money);
+                final DatePicker date =  viewDialog.findViewById(R.id.dp_cost_date);
+                final TimePicker time =  viewDialog.findViewById(R.id.tp_cost_time);
                 titleSpinner = viewDialog.findViewById(R.id.sp_cost_title);
                 typeGroup.check(R.id.rb_expend);
                 Type = 1;
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         }
                     }
                 });
-                arrayAdapter=new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_spinner_item, typesList);
+                arrayAdapter=new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_spinner_item, typesList);
                 arrayAdapter.setDropDownViewResource(R.layout.spinner_item);
                 titleSpinner.setAdapter(arrayAdapter);
                 titleSpinner.setPrompt("请选择种类" );
@@ -177,7 +175,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //Toast.makeText(MainActivity.this,options[which]+"Clicked",Toast.LENGTH_LONG).show();
                 if (which==0){
                     String uuid = selectedCostBean.getUuid();
                     mDatabaseHelper.deleteData(uuid);
@@ -195,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     Type = selectedCostBean.getCostType();
                     initSpinner();
                     editSpinner.setPrompt("请选择类别");
-                    arrayAdapter = new ArrayAdapter<String>(viewDialog.getContext(),android.R.layout.simple_list_item_1,typesList);
+                    arrayAdapter = new ArrayAdapter<>(viewDialog.getContext(),android.R.layout.simple_list_item_1,typesList);
                     editSpinner.setAdapter(arrayAdapter);
                     editSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
@@ -353,7 +350,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
