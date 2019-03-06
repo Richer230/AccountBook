@@ -89,7 +89,7 @@
         android:timePickerMode="spinner"
         android:id="@+id/tp_cost_time"
         android:layout_width="300dp"
-        android:layout_height="100dp">
+        android:layout_height="150dp">
     </TimePicker>
 
 </LinearLayout>

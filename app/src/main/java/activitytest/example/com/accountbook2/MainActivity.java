@@ -315,8 +315,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 typesList.add("火车票");
                 typesList.add("汽车票");
                 typesList.add("轮船票");
-                typesList.add("轮船票");
-                typesList.add("轮船票");
                 typesList.add("手机费");
                 typesList.add("景点门票");
                 typesList.add("运动健身");
