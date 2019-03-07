@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 final EditText money =  viewDialog.findViewById(R.id.et_cost_money);
                 final DatePicker date =  viewDialog.findViewById(R.id.dp_cost_date);
                 final TimePicker time =  viewDialog.findViewById(R.id.tp_cost_time);
+                final EditText remark = viewDialog.findViewById(R.id.et_remark);
                 titleSpinner = viewDialog.findViewById(R.id.sp_cost_title);
                 typeGroup.check(R.id.rb_expend);
                 Type = 1;
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                     }
                 });
-                money.setText("50.00");
+                money.setText("100.00");
                 builder.setView(viewDialog);
                 builder.setTitle("记一笔");
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -133,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                                 costBean.setCostMoney(Double.parseDouble(money.getText().toString()));
                             }
                         }
+                        costBean.setCostRemark(remark.getText().toString());
                         Calendar c = Calendar.getInstance();
                         c.set(date.getYear(),date.getMonth(),date.getDayOfMonth(),time.getHour(),time.getMinute());
                         costBean.setCostDate(date.getYear() + "-" + (date.getMonth()+1) + "-" + date.getDayOfMonth());
@@ -186,6 +188,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     final CostBean newCostBean = new CostBean();
                     RadioGroup editGroup = viewDialog.findViewById(R.id.radio_group);
                     final EditText editMoney = viewDialog.findViewById(R.id.et_cost_money);
+                    final EditText editRemark = viewDialog.findViewById(R.id.et_remark);
                     final Spinner editSpinner = viewDialog.findViewById(R.id.sp_cost_title);
                     final DatePicker editDate = viewDialog.findViewById(R.id.dp_cost_date);
                     final TimePicker editTime = viewDialog.findViewById(R.id.tp_cost_time);
@@ -212,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         editGroup.check(R.id.rb_income);
                     }
 
+                    editRemark.setText(selectedCostBean.getCostRemark());
                     editMoney.setText(String.valueOf(selectedCostBean.getCostMoney()));
                     for(int i=0;i<typesList.size();i++){
                         if(typesList.get(i).equals(selectedCostBean.getCostTitle())){
@@ -267,6 +271,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                                     newCostBean.setCostMoney(Double.parseDouble(editMoney.getText().toString()));
                                 }
                             }
+                            newCostBean.setCostRemark(editRemark.getText().toString());
                             Calendar c = Calendar.getInstance();
                             c.set(editDate.getYear(),editDate.getMonth(),editDate.getDayOfMonth(),editTime.getHour(),editTime.getMinute());
                             newCostBean.setCostDate(editDate.getYear()+"-"+(editDate.getMonth()+1)+"-"+editDate.getDayOfMonth());
@@ -342,6 +347,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 costBean.setUuid(cursor.getString(cursor.getColumnIndex("cost_id")));
                 costBean.setCostType(cursor.getInt(cursor.getColumnIndex("cost_type")));
                 costBean.setCostMonth(cursor.getString(cursor.getColumnIndex("cost_month")));
+                costBean.setCostRemark(cursor.getString(cursor.getColumnIndex("cost_remark")));
                 mCostBeanList.add(costBean);
             }
             cursor.close();

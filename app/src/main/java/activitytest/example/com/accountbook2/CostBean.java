@@ -12,6 +12,7 @@ public class CostBean {
     private long costTime;
     private int costType;
     private String costMonth;
+    private String costRemark;
 
     CostBean(){
         costTime = new Date().getTime();
@@ -76,5 +77,13 @@ public class CostBean {
 
     public String getTime(){
       return  MyDate.getTime(costTime);
+    }
+
+    public String getCostRemark() {
+        return costRemark;
+    }
+
+    public void setCostRemark(String costRemark) {
+        this.costRemark = costRemark;
     }
 }

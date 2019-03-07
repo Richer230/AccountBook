@@ -46,9 +46,10 @@ public class CostListAdapter extends BaseAdapter implements StickyListHeadersAda
         if(convertView == null){
             viewHolder = new ViewHolder();
             convertView = mLayoutInflater.inflate(R.layout.list_item,null);
-            viewHolder.mTvCostTitle = (TextView)convertView.findViewById(R.id.tv_title);
-            viewHolder.mTpCostTime = (TextView) convertView.findViewById(R.id.tv_time) ;
-            viewHolder.mTvCostMoney = (TextView)convertView.findViewById(R.id.tv_cost);
+            viewHolder.mTvCostTitle = convertView.findViewById(R.id.tv_title);
+            viewHolder.mTpCostTime =  convertView.findViewById(R.id.tv_time) ;
+            viewHolder.mTvCostMoney = convertView.findViewById(R.id.tv_cost);
+            viewHolder.mTvCostRemark = convertView.findViewById(R.id.tv_remark);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
@@ -57,6 +58,7 @@ public class CostListAdapter extends BaseAdapter implements StickyListHeadersAda
         viewHolder.mTvCostTitle.setText(bean.getCostTitle());
         viewHolder.mTvCostMoney.setText(String.valueOf(bean.getCostMoney()));
         viewHolder.mTpCostTime.setText(bean.getTime());
+        viewHolder.mTvCostRemark.setText(bean.getCostRemark());
         return convertView;
     }
 
@@ -66,7 +68,7 @@ public class CostListAdapter extends BaseAdapter implements StickyListHeadersAda
         if (convertView == null) {
             holder = new HeaderViewHolder();
             convertView = mLayoutInflater.inflate(R.layout.item_header, parent, false);
-            holder.text = (TextView) convertView.findViewById(R.id.text);
+            holder.text =  convertView.findViewById(R.id.text);
             convertView.setTag(holder);
         } else {
             holder = (HeaderViewHolder) convertView.getTag();
@@ -87,6 +89,7 @@ public class CostListAdapter extends BaseAdapter implements StickyListHeadersAda
         public TextView mTvCostTitle;
         public TextView mTvCostMoney;
         public TextView mTpCostTime;
+        public TextView mTvCostRemark;
     }
 
     class HeaderViewHolder {
