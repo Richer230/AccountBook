@@ -165,7 +165,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void initView(){
         stickyList = findViewById(R.id.test);
         stickyList.setOnItemLongClickListener(this);
-
     }
 
     private void showMyDialog(int index){

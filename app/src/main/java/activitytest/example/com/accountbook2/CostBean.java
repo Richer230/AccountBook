@@ -5,13 +5,21 @@ import java.util.Date;
 import java.util.UUID;
 
 public class CostBean {
+
     private String costTitle;
+
     private String costDate;
+
     private double costMoney;
+
     private String uuid;
+
     private long costTime;
+
     private int costType;
+
     private String costMonth;
+
     private String costRemark;
 
     CostBean(){
